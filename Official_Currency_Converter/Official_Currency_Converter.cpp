@@ -3,6 +3,7 @@
 #include <map>
 #include <stdexcept>
 
+using namespace std;
 
 class CurrencyConverter
 {
@@ -20,6 +21,10 @@ public:
 	{
 
 	}
+	void addCurrency(string name, double rate)
+	{
+		
+	}
 
 	double convert(double amount, const std::string& fromCurrency, const std::string& toCurrency)
 	{
@@ -32,11 +37,20 @@ public:
 		double convertedAmount = rate * amount;
 		return convertedAmount;
 	}
+
+	void display()
+	{
+		// iterate thru the map
+		for (auto i = exchangeRate.begin(); i != exchangeRate.end(); i++)
+		{
+			cout << i->first << " " << i->second << endl;
+		}
+	}
 };
 
 int main()
 {
-
+	CurrencyConverter convert;
 
 
 
@@ -45,7 +59,7 @@ int main()
 
 
 
-// 5/10 - 2 hours
+// 5/10 - 1 hours
 // 5/11 - 1 hour
 // 5/12 - 42 mins
 // 5/13 - 1 hour - feels like I'm never gonna figure this shit out
@@ -53,7 +67,7 @@ int main()
 // 5/15 - 1 hour
 // 5/16 - 1 hour
 // 5/17 - 1 hour
-// 
+// Not sure what happened here
 // 5/20
 // Work thru the boredom, the resistance
-// What if it takes 25 sessions? We're 5 sessions in
+// What if it takes 25 sessions? We're 8 sessions in
